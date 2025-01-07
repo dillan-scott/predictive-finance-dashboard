@@ -1,7 +1,7 @@
 import DashboardBox from "@/components/DashboardBox";
 import { Box } from "@mui/material";
 import StockPriceChart from "./StockPriceChart";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import ChartOptions from "./ChartOptions";
 
 const gridTemplate = `
@@ -12,6 +12,9 @@ const gridTemplate = `
 
 const Dashboard = () => {
   const [selectedTicker, setSelectedTicker] = useState<string>("AAPL");
+  const [ema9, setEma9] = useState<boolean>(false);
+  const [ema21, setEma21] = useState<boolean>(false);
+  const [ema50, setEma50] = useState<boolean>(false);
 
   return (
     <Box
@@ -25,10 +28,18 @@ const Dashboard = () => {
         gridTemplateAreas: gridTemplate,
       }}
     >
-      <StockPriceChart ticker={selectedTicker} />
+      <StockPriceChart
+        ticker={selectedTicker}
+        ema9={ema9}
+        ema21={ema21}
+        ema50={ema50}
+      />
       <ChartOptions
         selectedTicker={selectedTicker}
         setSelectedTicker={setSelectedTicker}
+        setEma9={setEma9}
+        setEma21={setEma21}
+        setEma50={setEma50}
       />
       <DashboardBox gridArea="c">SENTIMENT ANALYSIS</DashboardBox>
       <DashboardBox gridArea="d">PORTFOLIO MANAGE & ANALYSIS?</DashboardBox>

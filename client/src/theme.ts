@@ -36,7 +36,27 @@ export const tokens = {
   },
   tertiary: {
     // purple
+    100: "#f5f0ff",
+    200: "#e1d9f5",
+    300: "#c4b9eb",
+    400: "#9f97e0",
     500: "#8884d8",
+    600: "#6d69b3",
+    700: "#5a5491",
+    800: "#473e70",
+    900: "#2f2a4d",
+  },
+  quaternary: {
+    // blue
+    100: "#e0f7ff",
+    200: "#b3e0ff",
+    300: "#80c8ff",
+    400: "#4db0ff",
+    500: "#1a99ff",
+    600: "#007acc",
+    700: "#0063a1",
+    800: "#004c77",
+    900: "#003254",
   },
   background: {
     light: "#2d2d34",
@@ -55,9 +75,17 @@ export const themeSettings = {
     secondary: {
       ...tokens.secondary,
       main: tokens.secondary[500],
+      light: tokens.secondary[400],
     },
     tertiary: {
       ...tokens.tertiary,
+      main: tokens.tertiary[500],
+      light: tokens.tertiary[400],
+    },
+    quaternary: {
+      ...tokens.quaternary,
+      main: tokens.quaternary[500],
+      light: tokens.quaternary[400],
     },
     grey: {
       ...tokens.grey,
@@ -82,12 +110,12 @@ export const themeSettings = {
     h3: {
       fontFamily: ["Inter", "sans-serif"].join(","),
       fontSize: 20,
-      fontWeight: 800,
+      fontWeight: 700,
       color: tokens.grey[200],
     },
     h4: {
       fontFamily: ["Inter", "sans-serif"].join(","),
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 600,
       color: tokens.grey[300],
     },

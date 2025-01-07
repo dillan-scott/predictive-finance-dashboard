@@ -39,20 +39,7 @@ const SearchBar = ({
           },
         },
       }}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          label="Search for a ticker"
-          sx={{
-            "& .MuiInputLabel-root": {
-              color: palette.grey[500],
-            },
-            "& .MuiInputLabel-root.Mui-focused": {
-              color: palette.primary.main,
-            },
-          }}
-        />
-      )}
+      renderInput={(params) => <TextField {...params} />}
     />
   );
 };
