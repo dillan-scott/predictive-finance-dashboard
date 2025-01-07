@@ -98,7 +98,7 @@ const StockPriceChart = ({ ticker, ema9, ema21, ema50 }: Props) => {
     xaxis: {
       type: "category",
       labels: {
-        style: { fontSize: "12px", colors: palette.grey[500] },
+        style: { fontSize: "14px", colors: palette.grey[500] },
         formatter: function (val) {
           return dayjs(val).format("DD-MM-YYYY");
         },
@@ -106,7 +106,7 @@ const StockPriceChart = ({ ticker, ema9, ema21, ema50 }: Props) => {
     },
     yaxis: {
       labels: {
-        style: { fontSize: "12px", colors: palette.grey[500] },
+        style: { fontSize: "14px", colors: palette.grey[500] },
         formatter: function (val) {
           return val.toFixed(2);
         },
@@ -128,7 +128,7 @@ const StockPriceChart = ({ ticker, ema9, ema21, ema50 }: Props) => {
   };
 
   return (
-    <DashboardBox gridArea="a" p="1rem 1.5rem">
+    <DashboardBox gridArea="a" p="1rem 1.5rem 0rem 1.25rem">
       <ReactApexChart
         type="candlestick"
         series={seriesData}

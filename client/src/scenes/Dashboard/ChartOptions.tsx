@@ -49,14 +49,14 @@ function ChartOptions({
   return (
     <DashboardBox
       gridArea="b"
-      p="1rem 1.5rem"
+      p="1.5rem 1.5rem"
       sx={{ color: palette.grey[300] }}
     >
-      <Typography variant="h3" sx={{ textAlign: "center" }} mb="1rem">
+      <Typography variant="h3" sx={{ textAlign: "center" }} mb="0.5rem">
         CHART OPTIONS
       </Typography>
 
-      <Typography variant="h4" sx={{ mt: "1.5rem", mb: "0.5rem" }}>
+      <Typography variant="h4" sx={{ mt: "1rem", mb: "0.5rem" }}>
         Select a Ticker
       </Typography>
       <SearchBar
@@ -68,7 +68,7 @@ function ChartOptions({
       <Typography variant="h4" sx={{ mt: "1.5rem", mb: "0.25rem" }}>
         Select EMAs to Display
       </Typography>
-      <FlexBetween>
+      <FlexBetween margin="0 0.5rem">
         <FormControlLabel
           control={
             <Switch
