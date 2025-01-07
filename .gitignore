@@ -128,3 +128,24 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Logs and runtime files
+*.log
+*.out
+*.pid
+*.swp
+.DS_Store
+
+# Virtualenv folder
+.venv/
+env/
+venv/
+
+# Environment variable files
+.env
+.env.*

@@ -87,7 +87,7 @@ export const themeSettings = {
     },
     h4: {
       fontFamily: ["Inter", "sans-serif"].join(","),
-      fontSize: 14,
+      fontSize: 18,
       fontWeight: 600,
       color: tokens.grey[300],
     },

@@ -7,7 +7,7 @@ const NavBar = () => {
   const { palette } = useTheme();
   const location = useLocation();
   const currentPath = location.pathname;
-  console.log(currentPath);
+
   return (
     <FlexBetween mb="0.75rem" p="0.5rem 0rem" color={palette.grey[300]}>
       <FlexBetween gap="0.75rem">
