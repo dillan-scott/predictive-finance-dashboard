@@ -3,7 +3,7 @@ import { Autocomplete, TextField, useTheme } from "@mui/material";
 type Props = {
   selected: string;
   setSelected: React.Dispatch<React.SetStateAction<string>>;
-  options: string[];
+  options: Record<string, string>;
 };
 
 const SearchBar = ({
@@ -20,7 +20,7 @@ const SearchBar = ({
           setSelectedTicker(newValue);
         }
       }}
-      options={availableTickers}
+      options={Object.keys(availableTickers)}
       sx={{
         width: "100%",
         marginBottom: "0.5rem",

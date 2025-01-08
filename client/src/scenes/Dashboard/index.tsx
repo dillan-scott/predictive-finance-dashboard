@@ -11,7 +11,8 @@ const gridTemplate = `
 `;
 
 const Dashboard = () => {
-  const [selectedTicker, setSelectedTicker] = useState<string>("AAPL");
+  const [selectedTicker, setSelectedTicker] =
+    useState<string>("Apple Inc. (AAPL)");
   const [ema9, setEma9] = useState<boolean>(false);
   const [ema21, setEma21] = useState<boolean>(false);
   const [ema50, setEma50] = useState<boolean>(false);

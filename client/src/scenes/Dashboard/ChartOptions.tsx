@@ -9,17 +9,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-
-// Mock tickers list
-const availableTickers = [
-  "AAPL",
-  "GOOGL",
-  "AMZN",
-  "TSLA",
-  "MSFT",
-  "NFLX",
-  "SPY",
-];
+import { availableTickers } from "@/constants";
 
 type Props = {
   selectedTicker: string;

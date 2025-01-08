@@ -5,14 +5,16 @@ import dayjs from "dayjs";
 import { ApexOptions } from "apexcharts";
 import DashboardBox from "@/components/DashboardBox";
 import { useFetchStockDataQuery, usePredictTomorrowQuery } from "@/state/api";
+import { availableTickers } from "@/constants";
 
 type Props = { ticker: string; ema9: boolean; ema21: boolean; ema50: boolean };
 
 const StockPriceChart = ({ ticker, ema9, ema21, ema50 }: Props) => {
   const { palette } = useTheme();
 
-  const { data } = useFetchStockDataQuery(ticker);
-  const { data: predictionData } = usePredictTomorrowQuery(ticker);
+  const tickerSymbol = availableTickers[ticker];
+  const { data } = useFetchStockDataQuery(tickerSymbol);
+  const { data: predictionData } = usePredictTomorrowQuery(tickerSymbol);
 
   const candleData = useMemo(() => {
     return (
