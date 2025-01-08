@@ -4,7 +4,7 @@ import ReactApexChart from "react-apexcharts";
 import dayjs from "dayjs";
 import { ApexOptions } from "apexcharts";
 import DashboardBox from "@/components/DashboardBox";
-import { useFetchStockDataQuery } from "@/state/api";
+import { useFetchStockDataQuery, usePredictTomorrowQuery } from "@/state/api";
 
 type Props = { ticker: string; ema9: boolean; ema21: boolean; ema50: boolean };
 
@@ -12,6 +12,7 @@ const StockPriceChart = ({ ticker, ema9, ema21, ema50 }: Props) => {
   const { palette } = useTheme();
 
   const { data } = useFetchStockDataQuery(ticker);
+  const { data: predictionData } = usePredictTomorrowQuery(ticker);
 
   const candleData = useMemo(() => {
     return (
@@ -86,7 +87,9 @@ const StockPriceChart = ({ ticker, ema9, ema21, ema50 }: Props) => {
         width: 3,
       },
       title: {
-        text: `${ticker} (1d)`,
+        text: `${ticker} (1d) - Tomorrow price will be ${
+          predictionData?.prediction ? "UP" : "DOWN"
+        }`,
         align: "center",
         style: {
           color: palette.grey[200],

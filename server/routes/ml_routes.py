@@ -7,10 +7,10 @@ ml_bp = Blueprint("ml", __name__)
 @ml_bp.route('/train', methods=['GET'])
 def train():
     accuracy = train_model()
-    return str(accuracy)
+    return jsonify({"accuracy": accuracy})
 
 @ml_bp.route('/predict', methods=['GET'])
 def predict():
     ticker  = request.args.get("ticker")
     prediction = predict_tomorrow(ticker)
-    return "UP" if prediction else "DOWN"
+    return jsonify({"prediction": prediction})

@@ -7,7 +7,6 @@ import ChartOptions from "./ChartOptions";
 const gridTemplate = `
   "a a b"
   "a a d"
-  "a a d"
   "c c d"
 `;
 
@@ -25,7 +24,7 @@ const Dashboard = () => {
       gap="1.5rem"
       sx={{
         gridTemplateColumns: "repeat(3, minmax(450px, 1fr))",
-        gridTemplateRows: "repeat(4, minmax(250px, 1fr))",
+        gridTemplateRows: "repeat(3, minmax(350px, 1fr))",
         gridTemplateAreas: gridTemplate,
       }}
     >

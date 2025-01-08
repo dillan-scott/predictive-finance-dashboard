@@ -29,8 +29,6 @@ def train_model():
     closed_groups = closed_groups.transform(lambda x: x < x.shift(-1))
     price_data["Prediction"] = closed_groups.astype(int)
     
-    print(price_data[["Close", "Price Change", "Prediction"]])
-
     X = price_data[["RSI", "K Percent", "R Percent", "PROC", "MACD", "OBV"]]
     y = price_data["Prediction"]
 

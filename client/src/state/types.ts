@@ -11,3 +11,7 @@ export interface TradingDay {
   EMA_21: number | string;
   EMA_50: number | string;
 }
+
+export interface Prediction {
+  prediction: boolean;
+}

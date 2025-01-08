@@ -1,7 +1,14 @@
 import DashboardBox from "@/components/DashboardBox";
 import FlexBetween from "@/components/FlexBetween";
 import SearchBar from "@/components/SearchBar";
-import { FormControlLabel, Switch, Typography, useTheme } from "@mui/material";
+import { useTrainModelMutation } from "@/state/api";
+import {
+  Button,
+  FormControlLabel,
+  Switch,
+  Typography,
+  useTheme,
+} from "@mui/material";
 
 // Mock tickers list
 const availableTickers = [
@@ -31,6 +38,12 @@ function ChartOptions({
 }: Props) {
   const { palette } = useTheme();
 
+  const [trainModel] = useTrainModelMutation();
+
+  const handleRetrain = () => {
+    trainModel();
+  };
+
   const switchStyle = (color: string) => ({
     "& .MuiSwitch-switchBase.Mui-checked": {
       color: color,
@@ -52,11 +65,11 @@ function ChartOptions({
       p="1.5rem 1.5rem"
       sx={{ color: palette.grey[300] }}
     >
-      <Typography variant="h3" sx={{ textAlign: "center" }} mb="0.5rem">
+      <Typography variant="h3" sx={{ textAlign: "center" }}>
         CHART OPTIONS
       </Typography>
 
-      <Typography variant="h4" sx={{ mt: "1rem", mb: "0.5rem" }}>
+      <Typography variant="h4" sx={{ mt: "0.25rem", mb: "0.5rem" }}>
         Select a Ticker
       </Typography>
       <SearchBar
@@ -65,10 +78,10 @@ function ChartOptions({
         options={availableTickers}
       />
 
-      <Typography variant="h4" sx={{ mt: "1.5rem", mb: "0.25rem" }}>
+      <Typography variant="h4" sx={{ mt: "1.25rem" }}>
         Select EMAs to Display
       </Typography>
-      <FlexBetween margin="0 0.5rem">
+      <FlexBetween margin="0.25rem 0.5rem">
         <FormControlLabel
           control={
             <Switch
@@ -96,6 +109,23 @@ function ChartOptions({
           }
           label="EMA 50"
         />
+      </FlexBetween>
+      <FlexBetween mt="1rem">
+        <Typography variant="h4">Retrain the Random Forest model</Typography>
+        <Button
+          sx={{
+            padding: "0.25rem 0.75em",
+            fontSize: "14px",
+            color: palette.grey[300],
+            backgroundColor: palette.background.default,
+            "&:hover": {
+              backgroundColor: palette.grey[800],
+            },
+          }}
+          onClick={handleRetrain}
+        >
+          Retrain
+        </Button>
       </FlexBetween>
     </DashboardBox>
   );

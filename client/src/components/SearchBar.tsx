@@ -23,8 +23,9 @@ const SearchBar = ({
       options={availableTickers}
       sx={{
         width: "100%",
-        marginBottom: "1rem",
+        marginBottom: "0.5rem",
         "& .MuiOutlinedInput-root": {
+          height: "3rem",
           color: palette.grey[300],
           backgroundColor: palette.background.default,
           borderRadius: "8px",

@@ -16,4 +16,4 @@ train_model()
 
 if __name__ == "__main__":
     load_dotenv()
-    app.run(debug=False, port=int(os.getenv("PORT")))
+    app.run(debug=True, port=int(os.getenv("PORT")))
