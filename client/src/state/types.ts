@@ -1,4 +1,4 @@
-export interface Candle {
+export interface TradingDay {
   Date: string;
 
   Open: number;
@@ -6,11 +6,8 @@ export interface Candle {
   High: number;
   Low: number;
   Volume: number;
-  EMA_9: number;
-  EMA_21: number;
-  EMA_50: number;
-}
 
-export interface Ticker {
-  ticker: string;
+  EMA_9: number | string;
+  EMA_21: number | string;
+  EMA_50: number | string;
 }

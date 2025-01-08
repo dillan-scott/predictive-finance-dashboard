@@ -1,1 +1,1 @@
-# predictive-finance-dashboard
+# Market Dashboard with Predictive Insights
