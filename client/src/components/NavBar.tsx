@@ -17,7 +17,7 @@ const NavBar = () => {
         </Typography>
       </FlexBetween>
 
-      <FlexBetween gap="2rem">
+      {/* <FlexBetween gap="2rem">
         <Box>
           <Link
             to="/"
@@ -29,7 +29,7 @@ const NavBar = () => {
             dashboard
           </Link>
         </Box>
-      </FlexBetween>
+      </FlexBetween> */}
     </FlexBetween>
   );
 };
