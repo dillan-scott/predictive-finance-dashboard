@@ -1,12 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
+// import { Link, useLocation } from "react-router-dom";
 import PixIcon from "@mui/icons-material/Pix";
-import { useTheme, Typography, Box } from "@mui/material";
+import { useTheme, Typography } from "@mui/material";
 import FlexBetween from "@/components/FlexBetween";
 
 const NavBar = () => {
   const { palette } = useTheme();
-  const location = useLocation();
-  const currentPath = location.pathname;
+  // const location = useLocation();
+  // const currentPath = location.pathname;
 
   return (
     <FlexBetween mb="0.75rem" p="0.5rem 0rem" color={palette.grey[300]}>
